@@ -1,0 +1,20 @@
+/* CSS Document */
+
+.btnn{
+		background:url(../sis-upm/btn_bg.png) repeat-x 0px 0px;
+		font-size:18px;
+		color:#ffffff;
+		line-height:24px;
+		text-align:center;
+		padding:0px 17px;
+		border:1px solid #5a9752;
+		border-radius:7px;
+		-webkit-border-radius:7px;
+		-moz-border-radius:7px;
+	}
+	.btnn:hover{
+		background:url(../sis-upm/btn_bg_hover.png) repeat-x 0px 0px;
+		color:#ffffff;
+		text-decoration:none;
+		border-color:#6e6636;
+	} 

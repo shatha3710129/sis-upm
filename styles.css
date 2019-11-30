@@ -1,0 +1,155 @@
+.psloginbutton {
+
+	FONT-SIZE: 112%;
+	CURSOR: hand;
+	COLOR: #FFFFFF;
+	BACKGROUND-COLOR: #666666;
+	font-family: Calibri;
+	font-weight: bold;  
+	border: 2px outset;
+}
+.pssignupbutton {
+
+	FONT-SIZE: 112%;
+	CURSOR: hand;
+	COLOR: #FFFFFF;
+	BACKGROUND-COLOR: #666666;
+	font-family: Calibri;
+	font-weight: 200px;
+	border: 2px outset;
+}
+.psloginframe {
+	background-color: #F5F5F5;
+	border: 1px solid #D6D6D6;
+	}.pslogintext {
+	font-family: Calibri;
+	font-size: 112%;
+	color: #000000;
+	font-weight: normal; 
+}
+.psloginframecustom { 
+	background-color: #ddf9d7;   
+	border: 5px solid #5a8951;
+	border-radius:7px; 
+	}.pslogintextcustom {  
+	font-family: Calibri; 
+	font-size: 110%;  
+	color: #11580a; 
+	font-weight: normal;
+}.psSelLangtext {  
+	font-family: Calibri;
+	font-size: 106%; 
+	color: #000000;
+	font-weight: normal;
+}
+.psloginframetemp {
+	background-color: #FFF;    
+	border: 2px solid #006;
+	border-radius:30px;  
+	}.pslogintexttemp1 {  
+	font-family: Calibri;
+	text-align:center; 
+	font-size: 22pt;  
+	color: #000000; 
+	font-weight: bold;
+}.pslogintexttemp2 {  
+	font-family: Calibri;
+	text-align:center; 
+	font-size: 14pt;
+	color: #000000;
+	font-weight: bold;
+}
+.psloginlabel {
+	font-family: Calibri;
+	font-size: 107%;
+	color: #000000;
+	font-weight: bold;
+}
+.pslogincopyright {
+	font-family: Calibri;
+	font-size: 80%; 
+}
+.pslanguageframe {
+	background-color: #FFFFFF;
+	border-right: 1px solid #D6D6D6;
+	border-bottom: 1px solid #D6D6D6;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #D6D6D6;
+}
+.psboxframe { 
+	background-color: #FFFFFF; 
+	border: 1px solid rgb(214,214,214);
+}
+.psmessageframe {
+	background-color: #EEEEEE;
+	border-right: 1px solid #D6D6D6;
+	border-bottom: 1px solid #D6D6D6;
+	border-left: 1px solid #D6D6D6;
+}
+.pslogintextsmall {
+
+	font-family: Calibri;
+	font-size: 7pt;
+	color: #000000;
+}
+.pslogintextsmalllabel {
+
+	font-family: Calibri;
+	font-size: 8pt;
+	color: #000000;
+	font-weight: bold;
+}
+.psloginerror {
+
+	font-family: Calibri;
+	font-size: 90%; 
+	color: #FF0000;
+}
+.psloginmessagelarge {
+	font-family: Calibri;
+	font-size: 12pt;
+	font-weight: bold;
+	color: #666666;
+}
+.psloginmessage {
+
+	font-family: Calibri;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #666666;
+} 
+.pslogineditbox { 
+	font-family: Calibri;
+	font-size: 9pt;
+	color: #000000;
+}
+
+
+.psBroswerBox { 
+	background-color: #fedad8;     
+	border: 3px solid #915451;
+	border-radius:7px; 
+	}.psBroswerBoxInner {   
+	font-family: Calibri; 
+	font-size: 105%; 
+	color: #11580a;
+	font-weight: normal;
+	}  
+	 
+.psloginframecustom1 { 
+	background-color: #ece8c9;   
+	border: 1px solid #d1cba6;
+	border-radius:7px;  
+	}.pslogintextcustom1 {  
+	font-family: Calibri; 
+	font-size: 110%; 
+	color: #11580a;
+	font-weight: normal;
+	}
+.psforgesttext{      
+	font-family: Calibri; 
+	font-size: 105%;  
+	color: #000;  
+	font-weight: normal;
+}  

